@@ -60,3 +60,13 @@ gulp.task('test', function(done) {
 });
 
 gulp.task('build', ['test', 'sass']);
+
+gulp.task('upload', function() {
+  var ionicEmail = process.env.IONIC_EMAIL;
+  var ionicPassword = process.env.IONIC_PASSWORD;
+
+  var ionicCommand = 'ionic upload -e ' + ionicEmail + ' -p ' + ionicPassword;
+  return gulp.src('')
+    .pipe(exec(ionicCommand))
+    .pipe(exec.reporter(reportOptions))
+});
