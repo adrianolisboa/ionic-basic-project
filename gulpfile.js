@@ -13,6 +13,12 @@ var paths = {
   sass: ['./scss/**/*.scss']
 };
 
+var reportOptions = {
+  err: true,
+  stderr: true,
+  stdout: true
+};
+
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
